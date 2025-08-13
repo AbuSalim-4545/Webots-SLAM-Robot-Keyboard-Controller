@@ -1,0 +1,417 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/CircleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/TurtleBot3Burger.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/devices/robotis/protos/RobotisLds01.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/TireRubber.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Pcb.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/RoughPolymer.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/MattePaint.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/BrushedAluminium.proto"
+
+WorldInfo {
+  basicTimeStep 64
+}
+Viewpoint {
+  orientation 0.2996456195833208 0.6852532295934382 -0.6638075880827898 1.1649908904510495
+  position -3.259149316284891 3.524163523034484 5.4424830276851806
+  follow "TurtleBot3Burger"
+  followType "Mounted Shot"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+CircleArena {
+  radius 3
+  wallHeight 0.4
+}
+WoodenBox {
+  translation 0.467367 -0.545426 0.15
+  size 0.3 0.3 0.3
+}
+WoodenBox {
+  translation 1.26618 1.07342 0.15
+  name "wooden box(1)"
+  size 0.3 0.3 0.3
+}
+WoodenBox {
+  translation -0.15697 0.782967 0.15
+  name "wooden box(2)"
+  size 0.3 0.3 0.3
+}
+WoodenBox {
+  translation -1.62271 1.08968 0.15
+  name "wooden box(3)"
+  size 0.3 0.3 0.3
+}
+WoodenBox {
+  translation -1.09887 -0.301011 0.15
+  name "wooden box(4)"
+  size 0.3 0.3 0.3
+}
+WoodenBox {
+  translation -2.71307 -0.22263 0.15
+  name "wooden box(7)"
+  size 0.3 0.3 0.3
+}
+WoodenBox {
+  translation -0.744103 2.69736 0.15
+  name "wooden box(8)"
+  size 0.3 0.3 0.3
+}
+WoodenBox {
+  translation 2.30103 0.203241 0.15
+  name "wooden box(9)"
+  size 0.3 0.3 0.3
+}
+WoodenBox {
+  translation 0.005323 -1.57959 0.15
+  name "wooden box(5)"
+  size 0.3 0.3 0.3
+}
+WoodenBox {
+  translation -1.0974 -1.8598 0.15
+  name "wooden box(6)"
+  size 0.3 0.3 0.3
+}
+Robot {
+  translation -6.593987036951354e-09 -5.58681283988104e-10 -0.0004909072036726678
+  rotation -0.002385096546662729 -0.9999971555899655 1.124461776716654e-05 0.009281567899071036
+  children [
+    DEF inertial_unit InertialUnit {
+    }
+    DEF gps GPS {
+    }
+    Pose {
+      translation -0.03 0 0.153
+      children [
+        RobotisLds01 {
+          hidden position_0_0 1021.5577599999905
+          hidden position_0_1 1953.116159999983
+          hidden rotation_1 0.19210793620532007 0.6939347963617153 0.693937345331232 3.5211825898232
+          hidden translation_2 -0.019410119143952936 -0.01 0.037536358854598856
+          hidden rotation_2 0.8071904227370201 0.4173980962682643 0.41739962945989734 4.499809050834946
+        }
+      ]
+    }
+    DEF RIGHT_JOINT HingeJoint {
+      jointParameters HingeJointParameters {
+        position -1.2528644788289967e-10
+        axis 0 1 0
+        anchor 0 -0.08 0.033
+      }
+      device [
+        RotationalMotor {
+          name "right wheel motor"
+          consumptionFactor -0.001
+          maxVelocity 6.67
+        }
+        PositionSensor {
+          name "right wheel sensor"
+          resolution 0.00628
+        }
+      ]
+      endPoint Solid {
+        translation 0 -0.08 0.033
+        rotation 0 -1 0 1.5707960011275783
+        children [
+          DEF RIGHT_WHEEL Pose {
+            rotation 1 0 0 -1.5708003061004252
+            children [
+              DEF WHEEL_SHAPE Group {
+                children [
+                  Shape {
+                    appearance PBRAppearance {
+                      baseColor 0 0 0
+                      roughness 1
+                      metalness 0
+                    }
+                    geometry Mesh {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/wheel_shape.obj"
+                      ]
+                    }
+                  }
+                  Shape {
+                    appearance PBRAppearance {
+                      baseColor 0 0 0
+                      roughness 1
+                      metalness 0
+                    }
+                    geometry Mesh {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/inner_wheel.obj"
+                      ]
+                    }
+                  }
+                  Shape {
+                    appearance TireRubber {
+                      textureTransform TextureTransform {
+                        scale 1.7 0.76
+                        translation 0 0.164
+                      }
+                      type "bike"
+                    }
+                    geometry Mesh {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/tire.obj"
+                      ]
+                    }
+                  }
+                  Shape {
+                    appearance PBRAppearance {
+                    }
+                    geometry Mesh {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/wheel_support.obj"
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+        name "right wheel"
+        boundingObject Pose {
+          rotation 1 0 0 -1.570796
+          children [
+            Cylinder {
+              height 0.018
+              radius 0.033
+            }
+          ]
+        }
+        physics Physics {
+          density -1
+          mass 0.028499
+          centerOfMass [
+            0 0 0
+          ]
+        }
+      }
+    }
+    DEF LEFT_JOINT HingeJoint {
+      jointParameters HingeJointParameters {
+        position 1.595534340725131e-10
+        axis 0 1 0
+        anchor 0 0.08 0.033
+      }
+      device [
+        RotationalMotor {
+          name "left wheel motor"
+          consumptionFactor -0.001
+          maxVelocity 6.67
+        }
+        PositionSensor {
+          name "left wheel sensor"
+          resolution 0.00628
+        }
+      ]
+      endPoint Solid {
+        translation 0 0.08 0.033
+        rotation -0.7071047816920354 1.6706165226070709e-15 -0.7071087806754058 3.141588
+        children [
+          DEF RIGHT_WHEEL Pose {
+            rotation 1 0 0 -1.5708003061004252
+            children [
+              USE WHEEL_SHAPE
+            ]
+          }
+        ]
+        name "left wheel"
+        boundingObject Pose {
+          rotation 1 0 0 -1.570796
+          children [
+            Cylinder {
+              height 0.018
+              radius 0.033
+            }
+          ]
+        }
+        physics Physics {
+          density -1
+          mass 0.028499
+          centerOfMass [
+            0 0 0
+          ]
+        }
+      }
+    }
+    DEF CASTER_JOINT BallJoint {
+      jointParameters BallJointParameters {
+        position 4.352817700510812e-06
+        anchor -0.081 0 0.004
+      }
+      endPoint Solid {
+        translation -0.08099989016861017 -3.617073271291832e-10 0.004012292920954042
+        rotation 0.005004547806594393 0.9999864227157172 -0.0014522002183237073 0.000869662478757793
+        children [
+          Shape {
+            appearance PBRAppearance {
+            }
+            geometry DEF CASTER_SPHERE Sphere {
+              radius 0.004
+              subdivision 2
+            }
+          }
+        ]
+        boundingObject USE CASTER_SPHERE
+        physics Physics {
+        }
+      }
+    }
+    DEF BODY Pose {
+      translation 0 0 0.01
+      children [
+        DEF MOTORS Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 0
+            roughness 0.8
+            metalness 0
+          }
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/motors.obj"
+            ]
+          }
+        }
+        DEF CARDS Shape {
+          appearance Pcb {
+          }
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/cards.obj"
+            ]
+          }
+        }
+        DEF HOLDERS Shape {
+          appearance DEF MAIN_APP RoughPolymer {
+            baseColor 0 0 0
+            textureTransform TextureTransform {
+              scale 3 3
+            }
+          }
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/holders.obj"
+            ]
+          }
+        }
+        DEF BODY_FLOOR_0 Shape {
+          appearance USE MAIN_APP
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/body_floor.obj"
+            ]
+          }
+        }
+        DEF BODY_FLOOR_1 Pose {
+          translation 0 0 0.0376
+          children [
+            USE BODY_FLOOR_0
+          ]
+        }
+        DEF BODY_FLOOR_2 Pose {
+          translation 0 0 0.085
+          children [
+            USE BODY_FLOOR_0
+          ]
+        }
+        DEF BODY_FLOOR_3 Pose {
+          translation 0 0 0.1325
+          children [
+            USE BODY_FLOOR_0
+          ]
+        }
+        DEF BATTERY Shape {
+          appearance MattePaint {
+            baseColor 0.054902 0.121569 0.356863
+          }
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/battery.obj"
+            ]
+          }
+        }
+        DEF SCREWS Shape {
+          appearance PBRAppearance {
+          }
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/screws.obj"
+            ]
+          }
+        }
+        DEF BARS Shape {
+          appearance BrushedAluminium {
+            textureTransform TextureTransform {
+              scale 3 2
+            }
+          }
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/bars.obj"
+            ]
+          }
+        }
+      ]
+    }
+    Accelerometer {
+      translation -0.032 0 0.078
+    }
+    Gyro {
+      translation -0.032 0 0.078
+    }
+    Compass {
+      translation -0.032 0 0.078
+    }
+  ]
+  name "TurtleBot3Burger"
+  boundingObject Group {
+    children [
+      Pose {
+        translation -0.032 0 0.08
+        children [
+          Box {
+            size 0.097 0.137 0.1425
+          }
+        ]
+      }
+      Pose {
+        translation -0.032 0 0.08
+        children [
+          Box {
+            size 0.135 0.095 0.143
+          }
+        ]
+      }
+    ]
+  }
+  physics Physics {
+    density -1
+    mass 0.825735
+    centerOfMass [
+      -0.035 0 0.03
+    ]
+  }
+  controller "mapping"
+}
+TurtleBot3Burger {
+  hidden position_0_0 2.6975937065477162e-11
+  hidden position_0_1 2.245454882835244e-11
+  hidden position_0_2 3.612704207630669e-05
+  hidden position2_0_2 0.002458199706841475
+  hidden position3_0_2 -3.005348390643404e-07
+  hidden rotation_8 0 -1 0 1.5707959999190717
+  hidden rotation_9 -0.7071047812160937 1.0449425923852533e-16 -0.7071087811513449 3.141588
+  hidden rotation_10 0.014694800170332593 0.9998920201670777 -0.00010418327174393283 0.0024584651766670655
+  translation 2.690006175539862 -1.1812106418776936e-07 -0.0004935078559718184
+  rotation -0.0020965670929495805 -0.9999978020005579 2.0011940758058086e-05 0.00936755097494921
+  name "TurtleBot3Burger(1)"
+  controller "<none>"
+}
